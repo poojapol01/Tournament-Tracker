@@ -39,6 +39,7 @@
             placeNumberLabel = new Label();
             orLabel = new Label();
             createPrizeButton = new Button();
+            folderBrowserDialog1 = new FolderBrowserDialog();
             SuspendLayout();
             // 
             // createPrizeLabel
@@ -58,6 +59,7 @@
             prizePercentageTextBox.Name = "prizePercentageTextBox";
             prizePercentageTextBox.Size = new Size(103, 23);
             prizePercentageTextBox.TabIndex = 37;
+            prizePercentageTextBox.Text = "0";
             // 
             // prizePercentageLabel
             // 
@@ -76,6 +78,7 @@
             prizeAmountTextBox.Name = "prizeAmountTextBox";
             prizeAmountTextBox.Size = new Size(103, 23);
             prizeAmountTextBox.TabIndex = 35;
+            prizeAmountTextBox.Text = "0";
             // 
             // prizeAmountLabel
             // 
@@ -151,6 +154,7 @@
             createPrizeButton.TabIndex = 39;
             createPrizeButton.Text = "Create Prize";
             createPrizeButton.UseVisualStyleBackColor = true;
+            createPrizeButton.Click += createPrizeButton_Click;
             // 
             // createPrizeForm
             // 
@@ -189,5 +193,6 @@
         private Label placeNumberLabel;
         private Label orLabel;
         private Button createPrizeButton;
+        private FolderBrowserDialog folderBrowserDialog1;
     }
 }

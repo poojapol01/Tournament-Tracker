@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TrackerLibrary
 {
@@ -11,6 +12,10 @@ namespace TrackerLibrary
     /// </summary>
     public class PrizeModel
     {
+        /// <summary>
+		/// The unique identifier for the prize.
+		/// </summary>
+		public int Id { get; set; }
         /// <summary>
         /// The numeric identifier for the place (2 for the second place etc.)
         /// </summary>
@@ -32,5 +37,23 @@ namespace TrackerLibrary
 		/// 50%)
         /// </summary>
         public double PrizePercentage { get; set; }
+
+        public PrizeModel()
+        {
+            
+        }
+        public PrizeModel(string placeNumber, string placeName, string prizeAmount, string prizePercentage)
+        {
+            this.PlaceName = placeName;
+
+            int.TryParse(placeNumber, out int placeNumberValue);
+            this.PlaceNumber = placeNumberValue;
+
+            int.TryParse(prizeAmount, out int prizeAmountValue);
+            this.PrizeAmount = prizeAmountValue;
+
+            int.TryParse(prizePercentage, out int prizePercentageValue);
+            this.PrizePercentage = prizePercentageValue;
+        }
     }
 }
